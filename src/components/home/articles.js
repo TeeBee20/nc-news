@@ -1,35 +1,31 @@
+import { fetchAllArticles } from "../utils";
+import { useEffect, useState } from "react";
+
 const Articles = () => {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    fetchAllArticles().then((articles) => {
+      setArticles(articles);
+    });
+  }, []);
+
+  console.log(articles[0]);
+
   return (
     <div className="Articles">
       <ul>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVsQAde6D5PPE4YM4cSWXL-RFvgtCFrAxZg&usqp=CAU"
-            alt="articles"
-          />
-          <h4>Article Title</h4>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVsQAde6D5PPE4YM4cSWXL-RFvgtCFrAxZg&usqp=CAU"
-            alt="articles"
-          />
-          <h4>Article Title</h4>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVsQAde6D5PPE4YM4cSWXL-RFvgtCFrAxZg&usqp=CAU"
-            alt="articles"
-          />
-          <h4>Article Title</h4>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVsQAde6D5PPE4YM4cSWXL-RFvgtCFrAxZg&usqp=CAU"
-            alt="articles"
-          />
-          <h4>Article Title</h4>
-        </li>
+        {articles.map((article) => {
+          return (
+            <li key={article.article_id}>
+              <p>{article.topic}</p>
+              <p>{article.author}</p>
+              <h3>{article.title}</h3>
+              <p>Votes: {article.votes}</p>
+              <p>Comments: {article.comment_count}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

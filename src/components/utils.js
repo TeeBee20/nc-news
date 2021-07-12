@@ -8,3 +8,8 @@ export const fetchTopics = async () => {
   const { data } = await apiURL.get("/topics");
   return data.topics;
 };
+
+export const fetchAllArticles = async () => {
+  const { data } = await apiURL.get("/articles");
+  return data.articles;
+};

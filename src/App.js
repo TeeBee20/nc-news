@@ -12,11 +12,16 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        {/* <Route exact path="/:topic_slug/:article_id">
+        <Route exact path="/:topic_slug/:article_id">
           <MainImg />
           <ArticleBody />
           <Votes />
-        </Route> */}
+        </Route>
+        <Route exact path="/:topic_slug">
+          <Header />
+          <Nav />
+          <Articles />
+        </Route>
         <Route exact path="/">
           <Header />
           <Nav />

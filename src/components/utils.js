@@ -13,3 +13,8 @@ export const fetchAllArticles = async () => {
   const { data } = await apiURL.get("/articles");
   return data.articles;
 };
+
+export const fetchArticlesByTopic = async (topic) => {
+  const { data } = await apiURL.get(`/articles?topic=${topic}`);
+  return data.articles;
+};

@@ -18,3 +18,8 @@ export const fetchArticlesByTopic = async (topic) => {
   const { data } = await apiURL.get(`/articles?topic=${topic}`);
   return data.articles;
 };
+
+export const fetchArticlesById = async (id) => {
+  const { data } = await apiURL.get(`/articles/${id}`);
+  return data.article;
+};

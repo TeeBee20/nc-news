@@ -73,3 +73,12 @@
   height: 75%;
   width: 100%;
 }
+
+.Comments ul {
+  padding: 0;
+}
+
+.Comments li {
+  list-style-type: none;
+  border: dotted black 2px;
+}

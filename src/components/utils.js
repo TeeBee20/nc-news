@@ -23,3 +23,8 @@ export const fetchArticlesById = async (id) => {
   const { data } = await apiURL.get(`/articles/${id}`);
   return data.article;
 };
+
+export const fetchCommentsByArticleId = async (id) => {
+  const { data } = await apiURL.get(`/articles/${id}/comments`);
+  return data.comments;
+};

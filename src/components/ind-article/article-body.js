@@ -1,10 +1,11 @@
 import { fetchArticlesById } from "../utils";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { useParams } from "react-router";
+import { ExpandContext } from "../misc/Expand";
 import Votes from "./votes";
 
 const ArticleBody = () => {
-  const [article, setArticle] = useState({});
+  const { article, setArticle } = useContext(ExpandContext);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -20,7 +21,6 @@ const ArticleBody = () => {
       <h5>{article.author}</h5>
       <p>{article.created_at}</p>
       <p>{article.body}</p>
-      <Votes votes={article.votes} comments={article.comment_count} />
     </div>
   );
 };

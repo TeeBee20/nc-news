@@ -6,7 +6,7 @@ import { patchVotes } from "../utils";
 const Votes = () => {
   const { article_id } = useParams();
   const [votes, setVotes] = useState(0);
-  const [hasVoted, setHasVoted] = useState(false);
+  const [voteDirection, setVoteDirection] = useState();
   const { article, setArticle, commentsClicked, setCommentsClicked } =
     useContext(ExpandContext);
 
@@ -20,7 +20,7 @@ const Votes = () => {
     patchVotes(article_id, votes).then((article) => {
       setArticle(article[0]);
     });
-  }, [hasVoted]);
+  }, [voteDirection]);
 
   return (
     <div className="votes">
@@ -29,7 +29,7 @@ const Votes = () => {
         <button
           onClick={() => {
             setVotes(1);
-            setHasVoted(true);
+            setVoteDirection("up");
           }}
         >
           Upvote
@@ -37,7 +37,7 @@ const Votes = () => {
         <button
           onClick={() => {
             setVotes(-1);
-            setHasVoted(true);
+            setVoteDirection("down");
           }}
         >
           Downvote

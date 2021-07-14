@@ -6,10 +6,19 @@
   background-color: blanchedalmond;
   padding: 1vh;
   height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .Header h1 {
   font-size: 15px;
+  margin: 1vh;
+  padding-right: 11vh;
+}
+
+.Header button {
+  margin: 0;
 }
 
 .Nav {

@@ -31,7 +31,17 @@ function App() {
               <Comments />
             </ExpandProvider>
           </Route>
+          <Route exact path="/:topic_slug/sort_by=:query">
+            <Header />
+            <Nav />
+            <Articles />
+          </Route>
           <Route exact path="/:topic_slug">
+            <Header />
+            <Nav />
+            <Articles />
+          </Route>
+          <Route exact path="/sort_by=:query">
             <Header />
             <Nav />
             <Articles />

@@ -43,3 +43,8 @@ export const patchVotes = async (id, votes) => {
   const { data } = await apiURL.patch(`/articles/${id}`, { inc_votes: votes });
   return data.article;
 };
+
+export const sortArticlesByQuery = async (query) => {
+  const { data } = await apiURL.get(`/articles?sort_by=${query}`);
+  return data.articles;
+};

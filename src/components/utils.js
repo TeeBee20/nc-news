@@ -28,3 +28,18 @@ export const fetchCommentsByArticleId = async (id) => {
   const { data } = await apiURL.get(`/articles/${id}/comments`);
   return data.comments;
 };
+
+export const postCommentByArticleId = async (id, username, body) => {
+  console.log(id, username, body);
+  const { data } = await apiURL.post(`/articles/${id}/comments`, {
+    username: username,
+    body: body,
+  });
+
+  return data.comment;
+};
+
+export const patchVotes = async (id, votes) => {
+  const { data } = await apiURL.patch(`/articles/${id}`, { inc_votes: votes });
+  return data.article;
+};

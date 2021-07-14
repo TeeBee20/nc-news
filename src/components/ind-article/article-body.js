@@ -12,7 +12,7 @@ const ArticleBody = () => {
     fetchArticlesById(article_id).then((article) => {
       setArticle(article[0]);
     });
-  }, [article_id]);
+  }, [article_id, article]);
 
   return (
     <div className="article-body">

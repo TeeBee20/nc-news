@@ -4,8 +4,8 @@ import { ExpandContext } from "../misc/Expand";
 import { fetchCommentsByArticleId } from "../utils";
 
 const Comments = () => {
-  const [comments, setComments] = useState([]);
-  const { article, commentsClicked } = useContext(ExpandContext);
+  const { article, commentsClicked, comments, setComments } =
+    useContext(ExpandContext);
   const { article_id } = useParams();
 
   useEffect(() => {

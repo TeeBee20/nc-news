@@ -5,8 +5,7 @@ import { patchVotes } from "../utils";
 
 const Votes = () => {
   const { article_id } = useParams();
-  const [votes, setVotes] = useState(0);
-  const [voteDirection, setVoteDirection] = useState();
+  const [voteMade, setVoteMade] = useState(false);
   const { article, setArticle, commentsClicked, setCommentsClicked } =
     useContext(ExpandContext);
 
@@ -16,30 +15,24 @@ const Votes = () => {
     });
   };
 
-  useEffect(() => {
+  const addVote = (event) => {
+    setVoteMade((currVoteMade) => {
+      return !currVoteMade;
+    });
+    const votes = Number(event.target.value);
     patchVotes(article_id, votes).then((article) => {
       setArticle(article[0]);
     });
-  }, [voteDirection]);
+  };
 
   return (
     <div className="votes">
       <h6>
         Votes: {article.votes}
-        <button
-          onClick={() => {
-            setVotes(1);
-            setVoteDirection("up");
-          }}
-        >
+        <button disabled={voteMade} value="1" onClick={addVote}>
           Upvote
         </button>
-        <button
-          onClick={() => {
-            setVotes(-1);
-            setVoteDirection("down");
-          }}
-        >
+        <button disabled={!voteMade} value="-1" onClick={addVote}>
           Downvote
         </button>
       </h6>

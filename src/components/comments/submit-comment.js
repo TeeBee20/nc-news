@@ -18,7 +18,6 @@ const SubmitComment = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(user, commentBody);
     const comment = {
       username: user,
       body: commentBody,

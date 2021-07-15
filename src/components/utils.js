@@ -42,5 +42,11 @@ export const patchVotes = async (id, votes) => {
 
 export const sortArticlesByQuery = async (query) => {
   const { data } = await apiURL.get(`/articles?sort_by=${query}`);
+
+  if (query === "created_at") {
+    const { data } = await apiURL.get(`/articles?order=asc`);
+    return data.articles;
+  }
+
   return data.articles;
 };

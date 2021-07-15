@@ -8,7 +8,6 @@ import { Link, useParams } from "react-router-dom";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
-  // const [query, setQuery] = useState("");
   const { topic_slug } = useParams();
 
   useEffect(() => {
@@ -23,19 +22,25 @@ const Articles = () => {
     }
   }, [topic_slug]);
 
+  const sort = (event) => {
+    sortArticlesByQuery(event.target.value).then((articles) => {
+      setArticles(articles);
+    });
+  };
+
   return (
     <div className="Articles">
       <h3>Sort By:</h3>
       <ul>
-        <Link to={`${topic_slug}/sort_by=created_at`}>
-          <li>Date</li>
-        </Link>
-        <li>
-          <button>Comments</button>
-        </li>
-        <li>
-          <button>Votes</button>
-        </li>
+        <button value="created_at" onClick={sort}>
+          Date
+        </button>
+        <button value="comment_count" onClick={sort}>
+          Comments
+        </button>
+        <button value="votes" onClick={sort}>
+          Votes
+        </button>
       </ul>
       <ul>
         {articles.map((article) => {

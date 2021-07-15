@@ -27,7 +27,7 @@ function App() {
             <ExpandProvider>
               <ArticleBody />
               <Votes />
-              {/* <SubmitComment /> */}
+              <SubmitComment />
               <Comments />
             </ExpandProvider>
           </Route>

@@ -29,12 +29,8 @@ export const fetchCommentsByArticleId = async (id) => {
   return data.comments;
 };
 
-export const postCommentByArticleId = async (id, username, body) => {
-  console.log(id, username, body);
-  const { data } = await apiURL.post(`/articles/${id}/comments`, {
-    username: username,
-    body: body,
-  });
+export const postCommentByArticleId = async (id, comment) => {
+  const { data } = await apiURL.post(`/articles/${id}/comments`, comment);
 
   return data.comment;
 };

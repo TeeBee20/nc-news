@@ -9,7 +9,7 @@ const Header = () => {
   const logIn = () => {
     setUser("no user");
     if (user === "no user") {
-      setUser("weegembump");
+      setUser("cooljmessy");
     }
     setLoggedIn((currLoggedIn) => {
       return !loggedIn;

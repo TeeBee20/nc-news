@@ -67,7 +67,7 @@
 }
 
 .Articles li {
-  border: solid black 2px;
+  border: solid black 1px;
   height: fit-content;
   width: 45%;
   margin: 5px;

@@ -15,9 +15,7 @@ const Header = () => {
       return !loggedIn;
     });
   };
-
-  console.log(user, loggedIn);
-
+  
   return (
     <div className="Header">
       <Link to="/">

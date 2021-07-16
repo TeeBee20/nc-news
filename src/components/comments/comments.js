@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../misc/Expand";
 import { fetchCommentsByArticleId } from "../utils";
 
 const Comments = () => {
-  const { article, commentsClicked, comments, setComments } =
+  const { commentsClicked, comments, setComments } =
     useContext(ExpandContext);
   const { article_id } = useParams();
 

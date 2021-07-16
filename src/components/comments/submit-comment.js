@@ -1,18 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { ExpandContext } from "../misc/Expand";
 import { UserContext } from "../misc/user";
 import useComment from "../../hooks/useComment";
-import {
-  fetchArticlesById,
-  fetchCommentsByArticleId,
-  postCommentByArticleId,
-} from "../utils";
+import { postCommentByArticleId } from "../utils";
 import { useParams } from "react-router";
 
 const SubmitComment = () => {
   const { user } = useContext(UserContext);
   const { commentsClicked, setComments } = useContext(ExpandContext);
-  const { commentBody, setCommentBody, postSubmit, setPostSubmit } =
+  const { commentBody, setCommentBody } =
     useComment();
   const { article_id } = useParams();
 

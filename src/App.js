@@ -11,7 +11,7 @@ import Votes from "./components/ind-article/votes";
 import Comments from "./components/comments/comments";
 import SubmitComment from "./components/comments/submit-comment";
 import { UserContext, users } from "./components/misc/user";
-import { ExpandContext, ExpandProvider } from "./components/misc/Expand";
+import { ExpandProvider } from "./components/misc/Expand";
 
 function App() {
   const [user, setUser] = useState("no user");

@@ -2,7 +2,7 @@ import { fetchArticlesById } from "../utils";
 import { useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../misc/Expand";
-import Votes from "./votes";
+
 
 const ArticleBody = () => {
   const { article, setArticle } = useContext(ExpandContext);

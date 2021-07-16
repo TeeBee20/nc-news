@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { postCommentByArticleId } from "../components/utils";
+import { useState } from "react";
+
 
 const useComment = (id, username) => {
   const [commentBody, setCommentBody] = useState("");

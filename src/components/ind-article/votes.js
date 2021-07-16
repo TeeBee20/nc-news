@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../misc/Expand";
 import { patchVotes } from "../utils";

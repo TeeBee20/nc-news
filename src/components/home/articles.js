@@ -2,6 +2,7 @@ import {
   fetchAllArticles,
   fetchArticlesByTopic,
   sortArticlesByQuery,
+  articleImage
 } from "../utils";
 import useLoading from '../../hooks/useLoading';
 import { useEffect, useState } from "react";
@@ -44,6 +45,8 @@ const Articles = () => {
     });
   };
 
+ 
+
   return (
     <div className="Articles">
       <h3>Sort By:</h3>
@@ -57,6 +60,7 @@ const Articles = () => {
               <li>
                 <p>{article.topic}</p>
                 <p>{article.author}</p>
+                <img src={() => {articleImage(topic_slug)}} alt="image" />
                 <h3>{article.title}</h3>
                 <p>Votes: {article.votes}</p>
                 <p>Comments: {article.comment_count}</p>

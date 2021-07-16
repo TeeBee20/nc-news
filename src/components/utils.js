@@ -50,3 +50,9 @@ export const sortArticlesByQuery = async (query) => {
 
   return data.articles;
 };
+
+export const articleImage = (topic_slug) => {
+    if (topic_slug === 'coding') {
+      return "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.techrepublic.com%2Farticle%2Fsoftware-lessons-from-hbos-silicon-valley%2F&psig=AOvVaw1rBOgdkeLD9d5LOKs9y50u&ust=1626536795102000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLjDrfr35_ECFQAAAAAdAAAAABAD";
+    } 
+  }

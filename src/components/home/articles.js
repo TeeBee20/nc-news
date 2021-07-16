@@ -6,23 +6,35 @@ import {
 import useLoading from '../../hooks/useLoading';
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import useError from '../../hooks/useError';
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const { loading, setLoading} = useLoading();
+  const {hasError, setHasError} = useError();
   const { topic_slug } = useParams();
 
   useEffect(() => {
     if (topic_slug) {
       fetchArticlesByTopic(topic_slug).then((articles) => {
-        setArticles(articles);
+        setHasError(false);
         setLoading(false);
-      });
+        setArticles(articles);
+        }).catch(err => {
+          if(err) {
+            setHasError(true);
+          }
+        });
     } else {
       fetchAllArticles().then((articles) => {
-        setArticles(articles);
+        setHasError(false);
          setLoading(false);
-      });
+        setArticles(articles);
+        }).catch(err => {
+          if(err) {
+            setHasError(true);
+          }
+        });
     }
   }, [topic_slug]);
   
@@ -53,6 +65,7 @@ const Articles = () => {
           );
         })}
       </ul> : <p>Loading...</p>}
+      {hasError && <p>Oops! Couldn't load articles.</p>}
     </div>
   );
 };

@@ -3,23 +3,32 @@ import { useParams } from "react-router";
 import { ExpandContext } from "../misc/Expand";
 import { fetchCommentsByArticleId } from "../utils";
 import useLoading from '../../hooks/useLoading';
+import useError from '../../hooks/useError';
+
 
 const Comments = () => {
   const { commentsClicked, comments, setComments } =
     useContext(ExpandContext);
-  const {loading, setLoading } = useLoading();
+  const { loading, setLoading } = useLoading();
+  const { hasError, setHasError } = useError();
   const { article_id } = useParams();
 
   useEffect(() => {
     fetchCommentsByArticleId(article_id).then((comments) => {
       setComments(comments);
       setLoading(false);
+    }).catch(err => {
+      if (err) {
+        setHasError(true);
+      }
     });
   }, [article_id]);
+
 
   return (
     <div className="Comments">
     {loading && <p>Loading...</p>}
+    {hasError && <p>Oops! Couldn't load article comments.</p>}
       {commentsClicked ? (
         <ul>
           {comments.map((comment) => {

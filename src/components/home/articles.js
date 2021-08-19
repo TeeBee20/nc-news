@@ -51,8 +51,7 @@ const Articles = () => {
 
   return (
     <div className="Articles">
-      <section>
-        <h3>Sort</h3>
+      <section className="sort">
         <button value="created_at" onClick={sort}>
           Date
         </button>

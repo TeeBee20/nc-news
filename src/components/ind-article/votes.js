@@ -25,7 +25,7 @@ const Votes = () => {
     patchVotes(article_id, votes)
       .then((article) => {
         setHasError(false);
-        setArticle(article[0]);
+        setArticle(article);
       })
       .catch((err) => {
         if (err) {

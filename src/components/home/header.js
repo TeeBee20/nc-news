@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { UserContext } from "../misc/user";
+import { UserContext } from "../contexts/User";
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext);
@@ -15,13 +15,13 @@ const Header = () => {
       return !loggedIn;
     });
   };
-  
+
   return (
     <div className="Header">
+      <button onClick={logIn}>{loggedIn ? user : "Login"}</button>
       <Link to="/">
         <h1>NC NEWS</h1>
       </Link>
-      <button onClick={logIn}>{loggedIn ? user : "Login"}</button>
     </div>
   );
 };

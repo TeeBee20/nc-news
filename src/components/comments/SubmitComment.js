@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ExpandContext } from "../misc/Expand";
-import { UserContext } from "../misc/user";
+import { ExpandContext } from "../contexts/Expand";
+import { UserContext } from "../contexts/User";
 import useComment from "../../hooks/useComment";
 import { postCommentByArticleId } from "../utils";
 import { useParams } from "react-router";

@@ -4,26 +4,26 @@
 
 .Header {
   background-color: blanchedalmond;
-  padding: 1vh;
-  height: 5vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
 }
 
 .Header h1 {
-  font-size: 15px;
-  margin: 1vh;
-  padding-right: 11vh;
+  font-size: 20px;
+  padding-top: 20px;
 }
 
 .Header button {
-  margin: 0;
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
 }
 
 .Nav {
   background-color: cornflowerblue;
-  height: 5vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .Nav ul {
@@ -32,8 +32,9 @@
 }
 
 .Nav li {
-  display: inline;
+  display: inline-block;
   margin: 10px;
+  text-transform: capitalize;
 }
 
 .Main {
@@ -53,27 +54,57 @@
 }
 
 .Articles {
-  margin: 0;
   background-color: cornsilk;
+}
+
+.Articles section {
+  background-color: red;
+  position: sticky;
+  top: 6vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.Articles button {
+  border: none;
+  margin: 0;
+  transition-duration: 0.4s;
+}
+
+.Articles button:hover {
+  background-color: white;
 }
 
 .Articles ul {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: no wrap;
+  justify-content: space-between;
   list-style-type: none;
-  padding: 0;
+  margin: 0;
+  padding: 10px;
 }
 
 .Articles li {
   border: solid black 1px;
-  height: fit-content;
-  width: 45%;
-  margin: 5px;
+  height: auto;
+  width: auto;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+  box-shadow: -3px 3px 5px gray;
 }
 
-.Articles h4 {
+.Articles h3,
+#topic,
+#author {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+.Articles h3 {
   font-size: 20px;
   margin: 0;
 }
@@ -83,6 +114,10 @@
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .Comments ul {
   padding: 0;
 }
@@ -90,4 +125,19 @@
 .Comments li {
   list-style-type: none;
   border: dotted black 2px;
+}
+
+#topic {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+#author {
+  font-style: italic;
+}
+
+#votes,
+#comments {
+  display: inline-block;
+  padding: 10px;
 }

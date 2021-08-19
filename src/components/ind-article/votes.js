@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router";
-import { ExpandContext } from "../misc/Expand";
+import { ExpandContext } from "../contexts/Expand";
 import { patchVotes } from "../utils";
-import useError from '../../hooks/useError';
+import useError from "../../hooks/useError";
 
 const Votes = () => {
   const { article_id } = useParams();
   const [voteMade, setVoteMade] = useState(false);
-  const {hasError, setHasError} = useError();
+  const { hasError, setHasError } = useError();
   const { article, setArticle, commentsClicked, setCommentsClicked } =
     useContext(ExpandContext);
 
@@ -22,20 +22,22 @@ const Votes = () => {
       return !currVoteMade;
     });
     const votes = Number(event.target.value);
-    patchVotes(article_id, votes).then((article) => {
-      setHasError(false);
-      setArticle(article[0]);
-    }).catch(err => {
-      if (err) {
-        setHasError(true);
-      }
-    });
+    patchVotes(article_id, votes)
+      .then((article) => {
+        setHasError(false);
+        setArticle(article[0]);
+      })
+      .catch((err) => {
+        if (err) {
+          setHasError(true);
+        }
+      });
   };
 
   return (
     <div className="votes">
       <h6>
-      {hasError && <p>Oops! Could not change votes.</p>}
+        {hasError && <p>Oops! Could not change votes.</p>}
         Votes: {article.votes}
         <button disabled={voteMade} value="1" onClick={addVote}>
           Upvote

@@ -1,17 +1,17 @@
 import "./App.css";
 import { useState } from "react";
 import { Switch, Route } from "react-router";
-import Header from "./components/home/header";
-import Nav from "./components/home/nav";
-import Main from "./components/home/main-article";
-import Articles from "./components/home/articles";
-import MainImg from "./components/ind-article/main-img";
-import ArticleBody from "./components/ind-article/article-body";
-import Votes from "./components/ind-article/votes";
-import Comments from "./components/comments/comments";
-import SubmitComment from "./components/comments/submit-comment";
-import { UserContext, users } from "./components/misc/user";
-import { ExpandProvider } from "./components/misc/Expand";
+import Header from "./components/home/Header";
+import Nav from "./components/home/Nav";
+import Main from "./components/home/MainArticle";
+import Articles from "./components/home/Articles";
+import MainImg from "./components/ind-article/MainImg";
+import ArticleBody from "./components/ind-article/ArticleBody";
+import Votes from "./components/ind-article/Votes";
+import Comments from "./components/comments/Comments";
+import SubmitComment from "./components/comments/SubmitComment";
+import { UserContext, users } from "./components/contexts/User";
+import { ExpandProvider } from "./components/contexts/Expand";
 
 function App() {
   const [user, setUser] = useState("no user");
@@ -39,7 +39,9 @@ function App() {
           <Route exact path="/">
             <Header />
             <Nav />
-            <Main />
+
+            {/* <Main />
+            check if main is still a component */}
             <Articles />
           </Route>
         </Switch>

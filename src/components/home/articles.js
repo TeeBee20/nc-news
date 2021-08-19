@@ -49,20 +49,20 @@ const Articles = () => {
     });
   };
 
-  console.log(articleImage("coding"));
-
   return (
     <div className="Articles">
-      <h3>Sort By:</h3>
-      <button value="created_at" onClick={sort}>
-        Date
-      </button>
-      <button value="comment_count" onClick={sort}>
-        Comments
-      </button>
-      <button value="votes" onClick={sort}>
-        Votes
-      </button>
+      <section>
+        <h3>Sort</h3>
+        <button value="created_at" onClick={sort}>
+          Date
+        </button>
+        <button value="comment_count" onClick={sort}>
+          Comments
+        </button>
+        <button value="votes" onClick={sort}>
+          Votes
+        </button>
+      </section>
       {!loading ? (
         <ul>
           {articles.map((article) => {
@@ -72,12 +72,16 @@ const Articles = () => {
                 key={article.article_id}
               >
                 <li>
-                  <p>{article.topic}</p>
-                  <p>{article.author}</p>
-                  {/* <img src={articleImage(topic_slug)} alt="image" /> */}
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7HjpHNuzVssA9WGGtdCI0kC6gnLmjbMVuw&usqp=CAU"
+                    alt="news"
+                  />
+                  <p id="topic">{article.topic}</p>
                   <h3>{article.title}</h3>
-                  <p>Votes: {article.votes}</p>
-                  <p>Comments: {article.comment_count}</p>
+                  <p id="author">{article.author}</p>
+                  {/* <img src={articleImage(topic_slug)} alt="image" /> */}
+                  <p id="votes">{article.votes} votes</p>
+                  <p id="comments">{article.comment_count} comments</p>
                 </li>
               </Link>
             );

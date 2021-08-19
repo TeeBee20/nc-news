@@ -16,7 +16,7 @@ const ArticleBody = () => {
       .then((article) => {
         setHasError(false);
         setLoading(false);
-        setArticle(article[0]);
+        setArticle(article);
       })
       .catch((err) => {
         if (err) {

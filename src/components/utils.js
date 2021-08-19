@@ -21,6 +21,7 @@ export const fetchArticlesByTopic = async (topic) => {
 
 export const fetchArticlesById = async (id) => {
   const { data } = await apiURL.get(`/articles/${id}`);
+
   return data.article;
 };
 

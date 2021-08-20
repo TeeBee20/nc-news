@@ -66,3 +66,20 @@ export const articleImages = {
     description: "Footballer showing off his skills",
   },
 };
+
+export const formatPostedTimeAgo = (dateObj) => {
+  for (const key in dateObj) {
+    dateObj[key] = Math.floor(Math.abs(dateObj[key]));
+  }
+  if (dateObj.years) {
+    return `${dateObj.years} year${dateObj.years > 1 ? "s" : ""}`;
+  } else if (dateObj.months) {
+    return `${dateObj.months} month${dateObj.months > 1 ? "s" : ""}`;
+  } else if (dateObj.days) {
+    return `${dateObj.days} day${dateObj.days > 1 ? "s" : ""}`;
+  } else if (dateObj.hours) {
+    return `${dateObj.hours} hour${dateObj.hours > 1 ? "s" : ""}`;
+  } else {
+    return `${dateObj.minutes} min${dateObj.minutes > 1 ? "s" : ""}`;
+  }
+};

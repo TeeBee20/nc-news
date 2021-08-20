@@ -27,7 +27,7 @@ const SubmitComment = () => {
         .then((comment) => {
           setHasError(false);
           setComments((currComments) => {
-            return [comment[0], ...currComments];
+            return [...currComments, comment];
           });
         })
         .catch((err) => {
@@ -40,19 +40,22 @@ const SubmitComment = () => {
     <div>
       {hasError && <p>Oops! Couldn't submit comment.</p>}
       {commentsClicked && (
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={(event) => setCommentBody(event.target.value)}
-            id="comment"
-            placeholder="Add Comment Here"
-            value={commentBody}
-          ></input>
-          {user !== "no user" ? (
-            <button>Submit</button>
-          ) : (
-            <p>You need to login before you can comment.</p>
-          )}
-        </form>
+        <div className="submit-comment">
+          <form onSubmit={handleSubmit}>
+            {user === "no user" && (
+              <p>
+                <span className="bold">Please login in order to comment.</span>
+              </p>
+            )}
+            <input
+              onChange={(event) => setCommentBody(event.target.value)}
+              id="comment"
+              placeholder="Add Comment Here"
+              value={commentBody}
+            ></input>
+            <button>Post</button>
+          </form>
+        </div>
       )}
     </div>
   );

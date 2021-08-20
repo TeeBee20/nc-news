@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../contexts/Expand";
-import { fetchCommentsByArticleId } from "../utils";
+import { fetchCommentsByArticleId, formatPostedTimeAgo } from "../utils";
 import { DateTime } from "luxon";
 import useLoading from "../../hooks/useLoading";
 import useError from "../../hooks/useError";
@@ -33,10 +33,14 @@ const Comments = () => {
         <ul>
           {comments.map((comment) => {
             const timeObj = DateTime.fromISO(comment.created_at)
-              .diffNow(["months", "years"])
+              .diffNow(["months", "years", "minutes", "hours", "days"])
               .toObject();
-            const years = Math.floor(Math.abs(timeObj.years));
-            const months = Math.floor(Math.abs(timeObj.months));
+            const timeText = formatPostedTimeAgo(timeObj);
+            // const years = Math.floor(Math.abs(timeObj.years));
+            // const months = Math.floor(Math.abs(timeObj.months));
+            // const days = Math.floor(Math.abs(timeObj.days));
+            // const hours = Math.floor(Math.abs(timeObj.hours));
+            // const minutes = Math.floor(Math.abs(timeObj.minutes));
 
             return (
               <li key={comment.comment_id}>
@@ -44,15 +48,7 @@ const Comments = () => {
                   <p>
                     <span className="bold">{comment.author}</span> ~
                   </p>
-                  {years > 0 ? (
-                    <p>
-                      {years} {years > 1 ? "years ago" : "year ago"}
-                    </p>
-                  ) : (
-                    <p>
-                      {months} {months > 1 ? "months ago" : "month ago"}
-                    </p>
-                  )}
+                  <p>{timeText} ago</p>
                 </div>
                 <p>{comment.body}</p>
               </li>

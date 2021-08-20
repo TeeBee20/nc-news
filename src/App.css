@@ -147,7 +147,7 @@ a {
 }
 
 .Comments ul {
-  margin: 1vw;
+  margin: 1.5em 0.5em;
   padding: 0;
 }
 
@@ -263,6 +263,31 @@ a {
 
 .comments-button button:hover {
   color: red;
+}
+
+.submit-comment {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  margin: 1em 0;
+  padding: 1.5em;
+}
+.submit-comment p {
+  margin-top: 0;
+}
+.submit-comment input {
+  width: 90%;
+  height: auto;
+  margin-right: 2px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.submit-comment button {
+  font-size: 18px;
+  margin: 1em 0 0.4em 0;
 }
 
 #topic {

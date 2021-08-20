@@ -36,11 +36,6 @@ const Comments = () => {
               .diffNow(["months", "years", "minutes", "hours", "days"])
               .toObject();
             const timeText = formatPostedTimeAgo(timeObj);
-            // const years = Math.floor(Math.abs(timeObj.years));
-            // const months = Math.floor(Math.abs(timeObj.months));
-            // const days = Math.floor(Math.abs(timeObj.days));
-            // const hours = Math.floor(Math.abs(timeObj.hours));
-            // const minutes = Math.floor(Math.abs(timeObj.minutes));
 
             return (
               <li key={comment.comment_id}>

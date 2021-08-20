@@ -27,8 +27,8 @@ function App() {
             <ExpandProvider>
               <ArticleBody />
               <Votes />
-              <SubmitComment />
               <Comments />
+              <SubmitComment />
             </ExpandProvider>
           </Route>
           <Route exact path="/:topic_slug">

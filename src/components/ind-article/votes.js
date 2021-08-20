@@ -36,20 +36,22 @@ const Votes = () => {
 
   return (
     <div className="votes">
-      <h6>
-        {hasError && <p>Oops! Could not change votes.</p>}
-        Votes: {article.votes}
-        <button disabled={voteMade} value="1" onClick={addVote}>
-          Upvote
+      {hasError && <p>Oops! Could not change votes.</p>}
+      <div className="vote-buttons">
+        <button type="button" disabled={voteMade} value="1" onClick={addVote}>
+          ⬆︎
         </button>
-        <button disabled={!voteMade} value="-1" onClick={addVote}>
-          Downvote
+        <p>{article.votes}</p>
+        <button type="button" disabled={!voteMade} value="-1" onClick={addVote}>
+          ⬇︎
         </button>
-      </h6>
-      <button onClick={toggleClick}>
-        {commentsClicked ? "Hide " : "Show "}
-        {article.comment_count} comments
-      </button>
+      </div>
+      <div className="comments-button">
+        <button onClick={toggleClick}>
+          {commentsClicked ? "Hide " : "Show "}
+          <span>{article.comment_count}</span> comments
+        </button>
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Header = () => {
     <div className="Header">
       <button onClick={logIn}>{loggedIn ? user : "Login"}</button>
       <Link to="/">
-        <h1>NC NEWS</h1>
+        <h1>TB NEWS</h1>
       </Link>
     </div>
   );

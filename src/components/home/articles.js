@@ -75,7 +75,7 @@ const Articles = () => {
                   <p id="topic">{article.topic}</p>
                   <h3>{article.title}</h3>
                   <p id="author">{article.author}</p>
-                  <p id="votes">{article.votes} votes</p>
+                  <p id="votes">⬆︎{article.votes}</p>
                   <p id="comments">{article.comment_count} comments</p>
                 </li>
               </Link>

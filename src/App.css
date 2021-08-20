@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
@@ -97,17 +101,26 @@
   flex-wrap: no wrap;
   justify-content: space-between;
   list-style-type: none;
-  margin: 0;
-  padding: 10px;
+  margin-top: 1vh;
+  padding: 0;
 }
 
 .Articles li {
   border: solid black 1px;
   height: auto;
   width: auto;
-  margin-bottom: 10px;
+  margin: 10px;
   background-color: whitesmoke;
   box-shadow: -3px 3px 5px gray;
+  transition: border;
+}
+
+.Articles a {
+  color: black;
+}
+
+.Articles li:hover {
+  border: solid black 3px;
 }
 
 .Articles h3,
@@ -126,10 +139,6 @@
 .Articles img {
   height: 75%;
   width: 100%;
-}
-
-a {
-  text-decoration: none;
 }
 
 .Comments ul {

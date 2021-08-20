@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../contexts/Expand";
 import { fetchCommentsByArticleId } from "../utils";
+import { DateTime } from "luxon";
 import useLoading from "../../hooks/useLoading";
 import useError from "../../hooks/useError";
 
@@ -28,19 +29,33 @@ const Comments = () => {
     <div className="Comments">
       {loading && <p>Loading...</p>}
       {hasError && <p>Oops! Couldn't load article comments.</p>}
-      {commentsClicked ? (
+      {commentsClicked && (
         <ul>
           {comments.map((comment) => {
+            const timeObj = DateTime.fromISO(comment.created_at)
+              .diffNow(["months", "years"])
+              .toObject();
+            const years = Math.floor(Math.abs(timeObj.years));
+            const months = Math.floor(Math.abs(timeObj.months));
+
             return (
               <li key={comment.comment_id}>
                 <p>{comment.author}</p>
-                <p>{comment.created_at}</p>
+                {years > 0 ? (
+                  <p>
+                    {years} {years > 1 ? "years ago" : "year ago"}
+                  </p>
+                ) : (
+                  <p>
+                    {months} {months > 1 ? "months ago" : "month ago"}
+                  </p>
+                )}
                 <p>{comment.body}</p>
               </li>
             );
           })}
         </ul>
-      ) : null}
+      )}
     </div>
   );
 };

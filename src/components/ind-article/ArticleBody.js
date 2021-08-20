@@ -38,7 +38,7 @@ const ArticleBody = () => {
           | Posted by: <span>{article.author}</span>
         </p>
       </div>
-      <p>{article.body}</p>
+      <p id="text">{article.body}</p>
     </div>
   );
 };

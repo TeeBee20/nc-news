@@ -2,7 +2,7 @@ import {
   fetchAllArticles,
   fetchArticlesByTopic,
   sortArticlesByQuery,
-  articleImage,
+  articleImages,
 } from "../utils";
 import useLoading from "../../hooks/useLoading";
 import { useEffect, useState } from "react";
@@ -71,14 +71,10 @@ const Articles = () => {
                 key={article.article_id}
               >
                 <li>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7HjpHNuzVssA9WGGtdCI0kC6gnLmjbMVuw&usqp=CAU"
-                    alt="news"
-                  />
+                  <img src={articleImages[article.topic]} alt={article.topic} />
                   <p id="topic">{article.topic}</p>
                   <h3>{article.title}</h3>
                   <p id="author">{article.author}</p>
-                  {/* <img src={articleImage(topic_slug)} alt="image" /> */}
                   <p id="votes">{article.votes} votes</p>
                   <p id="comments">{article.comment_count} comments</p>
                 </li>

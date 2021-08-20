@@ -71,7 +71,10 @@ const Articles = () => {
                 key={article.article_id}
               >
                 <li>
-                  <img src={articleImages[article.topic]} alt={article.topic} />
+                  <img
+                    src={articleImages[article.topic].src}
+                    alt={articleImages[article.topic].description}
+                  />
                   <p id="topic">{article.topic}</p>
                   <h3>{article.title}</h3>
                   <p id="author">{article.author}</p>

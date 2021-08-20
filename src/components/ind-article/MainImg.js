@@ -6,8 +6,8 @@ const MainImg = () => {
 
   return (
     <div className="main-img">
-      <img src={articleImages[topic_slug]} alt={topic_slug} />
-      <h5>Article Description</h5>
+      <img src={articleImages[topic_slug].src} alt={topic_slug} />
+      <p>{articleImages[topic_slug].description}</p>
     </div>
   );
 };

@@ -53,10 +53,16 @@ export const sortArticlesByQuery = async (query) => {
 };
 
 export const articleImages = {
-  coding:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqA9PIxfN7tyfECj2eqc1Y261iteXpQtkr3Q&usqp=CAU",
-  cooking:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaiW7LaMpFHlapc28ZMH-N6ek48RUe0Qw0vA&usqp=CAU",
-  football:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya-0mjp6H0wNe3djgk7PcJEj0S4-rxfCKGg&usqp=CAU",
+  coding: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqA9PIxfN7tyfECj2eqc1Y261iteXpQtkr3Q&usqp=CAU",
+    description: "Software developer examining her code",
+  },
+  cooking: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaiW7LaMpFHlapc28ZMH-N6ek48RUe0Qw0vA&usqp=CAU",
+    description: "Chef making a healthy meal",
+  },
+  football: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya-0mjp6H0wNe3djgk7PcJEj0S4-rxfCKGg&usqp=CAU",
+    description: "Footballer showing off his skills",
+  },
 };

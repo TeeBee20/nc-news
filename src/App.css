@@ -150,6 +150,32 @@ a {
   border: dotted black 2px;
 }
 
+.main-img {
+  background-color: rgb(216, 223, 230);
+}
+
+.main-img img {
+  width: 100%;
+}
+
+.main-img p {
+  margin: 0;
+  padding: 0.5em;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.article-body h2 {
+  margin: 0;
+  padding: 1.5vh;
+}
+
 #topic {
   text-transform: capitalize;
   text-decoration: underline;

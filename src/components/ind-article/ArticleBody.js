@@ -10,6 +10,7 @@ const ArticleBody = () => {
   const { loading, setLoading } = useLoading();
   const { hasError, setHasError } = useError();
   const { article_id } = useParams();
+  const date = new Date(article.created_at);
 
   useEffect(() => {
     fetchArticlesById(article_id)
@@ -29,10 +30,10 @@ const ArticleBody = () => {
     <div className="article-body">
       {loading && <p>Loading...</p>}
       {hasError && <p>Oops! Couldn't load this article.</p>}
-      <p>{article.topic}</p>
       <h2>{article.title}</h2>
       <h5>{article.author}</h5>
-      <p>{article.created_at}</p>
+      <p>{article.topic}</p>
+      <p>{date.toUTCString()}</p>
       <p>{article.body}</p>
     </div>
   );

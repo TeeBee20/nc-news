@@ -31,9 +31,13 @@ const ArticleBody = () => {
       {loading && <p>Loading...</p>}
       {hasError && <p>Oops! Couldn't load this article.</p>}
       <h2>{article.title}</h2>
-      <h5>{article.author}</h5>
-      <p>{article.topic}</p>
-      <p>{date.toUTCString()}</p>
+      <p id="date">{date.toUTCString()}</p>
+      <div className="article-info">
+        <p id="topic">{article.topic}</p>
+        <p id="author">
+          | Posted by: <span>{article.author}</span>
+        </p>
+      </div>
       <p>{article.body}</p>
     </div>
   );

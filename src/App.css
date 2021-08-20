@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+span {
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
@@ -173,7 +177,14 @@ a {
 
 .article-body h2 {
   margin: 0;
-  padding: 1.5vh;
+  padding: 2vh 1vw 0 1vw;
+}
+
+.article-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #topic {
@@ -182,11 +193,23 @@ a {
 }
 
 #author {
-  font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 
 #votes,
 #comments {
   display: inline-block;
   padding: 10px;
+}
+
+#date {
+  color: lightslategray;
+  font-style: italic;
+}
+
+#topic {
+  text-decoration: none;
+  margin: 0;
+  color: cornflowerblue;
 }

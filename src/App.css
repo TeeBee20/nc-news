@@ -2,8 +2,9 @@ a {
   text-decoration: none;
 }
 
-span {
+.bold {
   font-weight: bold;
+  font-style: normal;
 }
 
 .App {
@@ -146,6 +147,7 @@ span {
 }
 
 .Comments ul {
+  margin: 1vw;
   padding: 0;
 }
 
@@ -153,16 +155,31 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 2vw;
+  margin: 2vh 2vw;
   background-color: rgb(216, 223, 230);
   border-radius: 1em;
   text-align: justify;
+  border: solid 1px gray;
 }
 
 .Comments p {
   margin: 0.1rem 1rem;
   padding: 0.5rem;
   line-height: 1.4rem;
+}
+
+.comment-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  margin-left: 0.5rem;
+}
+
+.comment-info p {
+  margin: 0;
+  padding: 0.2rem;
+  font-style: italic;
 }
 
 .main-img {

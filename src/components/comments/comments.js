@@ -40,16 +40,20 @@ const Comments = () => {
 
             return (
               <li key={comment.comment_id}>
-                <p>{comment.author}</p>
-                {years > 0 ? (
+                <div className="comment-info">
                   <p>
-                    {years} {years > 1 ? "years ago" : "year ago"}
+                    <span className="bold">{comment.author}</span> ~
                   </p>
-                ) : (
-                  <p>
-                    {months} {months > 1 ? "months ago" : "month ago"}
-                  </p>
-                )}
+                  {years > 0 ? (
+                    <p>
+                      {years} {years > 1 ? "years ago" : "year ago"}
+                    </p>
+                  ) : (
+                    <p>
+                      {months} {months > 1 ? "months ago" : "month ago"}
+                    </p>
+                  )}
+                </div>
                 <p>{comment.body}</p>
               </li>
             );

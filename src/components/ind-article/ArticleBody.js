@@ -35,7 +35,7 @@ const ArticleBody = () => {
       <div className="article-info">
         <p id="topic">{article.topic}</p>
         <p id="author">
-          | Posted by: <span>{article.author}</span>
+          | Posted by: <span className="bold">{article.author}</span>
         </p>
       </div>
       <p id="text">{article.body}</p>

@@ -1,10 +1,12 @@
+import { articleImages } from "../utils";
+import { useParams } from "react-router";
+
 const MainImg = () => {
+  const { topic_slug } = useParams();
+
   return (
     <div className="main-img">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7HjpHNuzVssA9WGGtdCI0kC6gnLmjbMVuw&usqp=CAU"
-        alt="news"
-      />
+      <img src={articleImages[topic_slug]} alt={topic_slug} />
       <h5>Article Description</h5>
     </div>
   );

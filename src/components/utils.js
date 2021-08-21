@@ -1,4 +1,5 @@
 import axios from "axios";
+import { DateTime } from "luxon";
 
 const apiURL = axios.create({
   baseURL: "https://nc-news-tb20.herokuapp.com/api",
@@ -65,6 +66,13 @@ export const articleImages = {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya-0mjp6H0wNe3djgk7PcJEj0S4-rxfCKGg&usqp=CAU",
     description: "Footballer showing off his skills",
   },
+};
+
+export const createTimeObj = (str) => {
+  const timeObj = DateTime.fromISO(str)
+    .diffNow(["months", "years", "minutes", "hours", "days"])
+    .toObject();
+  return timeObj;
 };
 
 export const formatPostedTimeAgo = (dateObj) => {

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../contexts/Expand";
 import { fetchCommentsByArticleId, formatPostedTimeAgo } from "../utils";
-import { DateTime } from "luxon";
+import { createTimeObj } from "../utils";
 import useLoading from "../../hooks/useLoading";
 import useError from "../../hooks/useError";
 
@@ -32,9 +32,7 @@ const Comments = () => {
       {commentsClicked && (
         <ul>
           {comments.map((comment) => {
-            const timeObj = DateTime.fromISO(comment.created_at)
-              .diffNow(["months", "years", "minutes", "hours", "days"])
-              .toObject();
+            const timeObj = createTimeObj(comment.created_at);
             const timeText = formatPostedTimeAgo(timeObj);
 
             return (

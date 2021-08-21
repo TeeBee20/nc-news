@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExpandContext } from "../contexts/Expand";
 import { UserContext } from "../contexts/User";
 import useComment from "../../hooks/useComment";
-import { postCommentByArticleId } from "../utils";
+import { postCommentByArticleId, sortByTime } from "../utils";
 import { useParams } from "react-router";
 import useError from "../../hooks/useError";
 
@@ -27,7 +27,7 @@ const SubmitComment = () => {
         .then((comment) => {
           setHasError(false);
           setComments((currComments) => {
-            return [...currComments, comment];
+            return sortByTime([...currComments, comment]);
           });
           setCommentBody("");
         })

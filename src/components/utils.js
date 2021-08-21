@@ -92,8 +92,8 @@ export const formatPostedTimeAgo = (dateObj) => {
   }
 };
 
-export const sortByTime = (comments) => {
-  const sortedComments = comments.map((comment) => {
+export const sortByTime = (commentsArr) => {
+  const sortedComments = commentsArr.map((comment) => {
     comment.date_time = DateTime.fromISO(comment.created_at);
     return comment;
   });

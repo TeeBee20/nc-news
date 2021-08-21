@@ -29,6 +29,7 @@ const SubmitComment = () => {
           setComments((currComments) => {
             return [...currComments, comment];
           });
+          setCommentBody("");
         })
         .catch((err) => {
           setHasError(true);

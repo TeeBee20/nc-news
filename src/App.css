@@ -1,3 +1,6 @@
+@media only screen and (min-width: 768px) {
+}
+
 a {
   text-decoration: none;
 }
@@ -83,6 +86,10 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.sort button {
+  font-size: 1em;
 }
 
 .Articles button {

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Switch, Route } from "react-router";
 import Header from "./components/home/Header";
 import Nav from "./components/home/Nav";
-import Main from "./components/home/MainArticle";
 import Articles from "./components/home/Articles";
 import MainImg from "./components/ind-article/MainImg";
 import ArticleBody from "./components/ind-article/ArticleBody";
@@ -39,9 +38,6 @@ function App() {
           <Route exact path="/">
             <Header />
             <Nav />
-
-            {/* <Main />
-            check if main is still a component */}
             <Articles />
           </Route>
         </Switch>

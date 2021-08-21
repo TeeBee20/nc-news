@@ -64,13 +64,13 @@ const Articles = () => {
       </section>
       {!loading ? (
         <ul>
-          {articles.map((article) => {
+          {articles.map((article, i) => {
             return (
               <Link
                 to={`/${article.topic}/${article.article_id}`}
                 key={article.article_id}
               >
-                <li>
+                <li className={i % 4 === 0 ? "big-article" : "small-article"}>
                   <img
                     src={articleImages[article.topic].src}
                     alt={articleImages[article.topic].description}

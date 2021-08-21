@@ -70,7 +70,7 @@ const Articles = () => {
                 to={`/${article.topic}/${article.article_id}`}
                 key={article.article_id}
               >
-                <li className={i % 4 === 0 ? "big-article" : "small-article"}>
+                <li className={i % 5 === 0 ? "big-art" : "small-art"}>
                   <img
                     src={articleImages[article.topic].src}
                     alt={articleImages[article.topic].description}

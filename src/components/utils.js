@@ -91,3 +91,14 @@ export const formatPostedTimeAgo = (dateObj) => {
     return `${dateObj.minutes} min${dateObj.minutes > 1 ? "s" : ""}`;
   }
 };
+
+export const sortByTime = (comments) => {
+  const sortedComments = comments.map((comment) => {
+    comment.date_time = DateTime.fromISO(comment.created_at);
+    return comment;
+  });
+  sortedComments.sort((a, b) => {
+    return b.date_time - a.date_time;
+  });
+  return sortedComments;
+};

@@ -2,7 +2,8 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { ExpandContext } from "../contexts/Expand";
 import { fetchCommentsByArticleId, formatPostedTimeAgo } from "../utils";
-import { createTimeObj } from "../utils";
+import { createTimeObj, sortByTime } from "../utils";
+import { DateTime } from "luxon";
 import useLoading from "../../hooks/useLoading";
 import useError from "../../hooks/useError";
 
@@ -15,7 +16,7 @@ const Comments = () => {
   useEffect(() => {
     fetchCommentsByArticleId(article_id)
       .then((comments) => {
-        setComments(comments);
+        setComments(sortByTime(comments));
         setLoading(false);
       })
       .catch((err) => {

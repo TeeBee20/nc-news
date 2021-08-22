@@ -114,7 +114,7 @@ a {
   padding: 0;
 }
 
-.Articles li {
+[class*="-art"] {
   border: solid black 1px;
   height: auto;
   width: auto;
@@ -454,7 +454,6 @@ a {
     margin-top: 1vh;
     padding: 0;
   }
-
   .art-info {
     display: flex;
     flex-direction: column;
@@ -473,13 +472,9 @@ a {
   }
 
   .big-art {
-    border: solid black 1px;
     height: auto;
     width: 95vw;
     margin: 10px;
-    background-color: whitesmoke;
-    box-shadow: -3px 3px 5px gray;
-    transition: border;
   }
 
   .big-art h3 {
@@ -494,13 +489,9 @@ a {
   }
 
   .small-art {
-    border: solid black 1px;
     height: 50vh;
     width: 45vw;
     margin: 1em;
-    background-color: whitesmoke;
-    box-shadow: -3px 3px 5px gray;
-    transition: border;
   }
 
   .small-art h3 {
@@ -512,8 +503,9 @@ a {
   }
 
   .small-art .art-votes-comm {
+    margin: 0.5em 0;
     padding: 0;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 

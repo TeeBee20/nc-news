@@ -447,15 +447,22 @@
     padding: 0;
   }
 
-  /* .Articles li {
-    border: solid black 1px;
-    height: auto;
-    width: auto;
-    margin: 10px;
-    background-color: whitesmoke;
-    box-shadow: -3px 3px 5px gray;
-    transition: border;
-  } */
+  .art-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .art-votes-comm {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  #topic {
+    align-self: flex-start;
+  }
 
   .big-art {
     border: solid black 1px;
@@ -465,18 +472,49 @@
     background-color: whitesmoke;
     box-shadow: -3px 3px 5px gray;
     transition: border;
-    flex-grow: 4;
+  }
+
+  .big-art h3 {
+    font-size: 2em;
+  }
+
+  .big-art #author,
+  #votes,
+  #comments {
+    font-size: 1.2em;
+    padding: 0.5em;
   }
 
   .small-art {
     border: solid black 1px;
     height: 50vh;
     width: 45vw;
-    margin: 10px;
+    margin: 1em;
     background-color: whitesmoke;
     box-shadow: -3px 3px 5px gray;
     transition: border;
-    flex-shrink: 2;
+  }
+
+  .small-art h3 {
+    font-size: 1em;
+  }
+
+  .small-art .art-info #author {
+    margin-top: 0.5em;
+  }
+
+  .small-art .art-votes-comm {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .small-art #author,
+  #votes,
+  #comments {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
   }
 
   .Articles a {
@@ -496,12 +534,11 @@
   }
 
   .Articles h3 {
-    font-size: 20px;
     margin: 0;
   }
 
   .Articles img {
-    height: 75%;
+    height: 60%;
     width: 100%;
   }
 

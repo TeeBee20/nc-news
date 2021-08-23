@@ -624,15 +624,17 @@ a {
 /* make text bigger for laptop */
 @media only screen and (min-width: 1000px) {
   .Header h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .Header button {
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0.3em;
   }
+
   .Nav {
-    font-size: 1.7em;
+    font-size: 1em;
+    width: 100vw;
   }
 
   .Nav ul {
@@ -642,8 +644,12 @@ a {
 
   .sort {
     top: 4.5;
-    font-size: 1.7em;
+    font-size: 1em;
     justify-content: justify;
+  }
+
+  .sort button {
+    font-size: 1.2em;
   }
 
   .Articles ul {
@@ -759,9 +765,9 @@ a {
   }
 
   .main-img {
-    width: 65vw;
+    width: 66vw;
     height: 45vh;
-    margin: 2vh auto;
+    margin: 2vh auto 0 auto;
   }
 
   .main-img img {
@@ -769,15 +775,30 @@ a {
   }
 
   .article-body {
-    padding: 1em;
+    padding: 2em;
+    line-height: 2.5em;
+  }
+
+  .article-info,
+  #date,
+  .article-body h2 {
+    margin: 0;
   }
 
   #text {
-    line-height: 1.5em;
-    padding: 1em 1.5em;
+    line-height: 2em;
+    padding: 0.5em 1.5em;
+  }
+
+  .comments-button button {
+    font-size: 1.2rem;
   }
 
   .submit-comment input {
-    width: 50%;
+    width: 60%;
+  }
+
+  .Comments li {
+    font-size: 1.2em;
   }
 }

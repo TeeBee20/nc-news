@@ -830,4 +830,23 @@ a {
     width: fit-content;
     height: 10%;
   }
+
+  .main-img {
+    width: 65vw;
+    height: 45vh;
+    margin: 2vh auto;
+  }
+
+  .main-img img {
+    height: 90%;
+  }
+
+  .article-body {
+    padding: 1em;
+  }
+
+  #text {
+    line-height: 1.5em;
+    padding: 1em 1.5em;
+  }
 }

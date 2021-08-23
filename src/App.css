@@ -775,15 +775,59 @@ a {
   }
 
   .big-art .art-votes-comm {
-    align-self: flex-end;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2.5vw;
     padding: 0;
-    height: 10%;
-    width: 40vw;
+    height: 15%;
+    width: 35vw;
+    font-size: 1.2em;
   }
 
   .small-art {
+    margin: 1vh 0;
+    width: 100vw;
+    height: 23vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .small-art img {
     width: 30vw;
-    height: 25vh;
+    height: auto;
+  }
+
+  .small-art .art-text {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .small-art .art-info {
+    margin: 0;
+  }
+
+  .small-art h3 {
+    font-size: 1.5em;
+    text-align: left;
+    margin-bottom: 1vh;
+    padding: 0 1em;
+  }
+
+  .small-art #topic {
+    margin-bottom: 1vh;
+  }
+
+  .small-art #author {
+    text-align: left;
+    padding: 0 1.5em;
+  }
+
+  .small-art .art-votes-comm {
+    font-size: 1.2em;
+    align-self: flex-end;
+    width: fit-content;
+    height: 10%;
   }
 }

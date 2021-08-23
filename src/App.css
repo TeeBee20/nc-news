@@ -720,3 +720,70 @@ a {
     line-height: 1.4rem;
   }
 }
+@media only screen and (min-width: 1000px) {
+  .Articles ul {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .big-art {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #topic {
+    color: red;
+  }
+
+  .big-art img {
+    height: 100%;
+    width: 60%;
+  }
+
+  .big-art .art-text {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .big-art .art-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 45vh;
+    width: 40vw;
+    padding: 1vh;
+  }
+
+  .big-art .art-info h3 {
+    margin: 1vh 0;
+    padding: 0 2vw;
+    font-size: 2em;
+    text-align: left;
+  }
+
+  .big-art #author {
+    margin: 1.5vh 0;
+    padding: 0 2vw;
+  }
+
+  .big-art .art-votes-comm {
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 40vw;
+  }
+
+  .small-art {
+    width: 30vw;
+    height: 25vh;
+  }
+}

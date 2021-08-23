@@ -75,14 +75,16 @@ const Articles = () => {
                     src={articleImages[article.topic].src}
                     alt={articleImages[article.topic].description}
                   />
-                  <div className="art-info">
-                    <p id="topic">{article.topic}</p>
-                    <h3>{article.title}</h3>
-                    <p id="author">By: {article.author}</p>
-                  </div>
-                  <div className="art-votes-comm">
-                    <p id="votes">⬆︎{article.votes}</p>
-                    <p id="comments">{article.comment_count} comments</p>
+                  <div className="art-text">
+                    <div className="art-info">
+                      <p id="topic">{article.topic}</p>
+                      <h3>{article.title}</h3>
+                      <p id="author">By: {article.author}</p>
+                    </div>
+                    <div className="art-votes-comm">
+                      <p id="votes">⬆︎{article.votes}</p>
+                      <p id="comments">{article.comment_count} comments</p>
+                    </div>
                   </div>
                 </li>
               </Link>

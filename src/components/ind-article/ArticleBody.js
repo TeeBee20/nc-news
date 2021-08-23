@@ -28,17 +28,22 @@ const ArticleBody = () => {
 
   return (
     <div className="article-body">
-      {loading && <p>Loading...</p>}
-      {hasError && <p>Oops! Couldn't load this article.</p>}
-      <h2>{article.title}</h2>
-      <p id="date">{date.toUTCString()}</p>
-      <div className="article-info">
-        <p id="topic">{article.topic}</p>
-        <p id="author">
-          | Posted by: <span className="bold">{article.author}</span>
-        </p>
-      </div>
-      <p id="text">{article.body}</p>
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <div>
+          {hasError && <p>Oops! Couldn't load this article.</p>}
+          <h2>{article.title}</h2>
+          <p id="date">{date.toUTCString()}</p>
+          <div className="article-info">
+            <p id="topic">{article.topic}</p>
+            <p id="author">
+              | Posted by: <span className="bold">{article.author}</span>
+            </p>
+          </div>
+          <p id="text">{article.body}</p>
+        </div>
+      )}
     </div>
   );
 };

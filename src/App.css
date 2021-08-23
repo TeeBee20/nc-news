@@ -212,8 +212,8 @@ a {
 
 .main-img p {
   margin: 0;
-  padding: 0.5em;
-  font-size: 14px;
+  padding: 1em;
+  font-size: 1em;
   text-align: justify;
 }
 
@@ -278,7 +278,8 @@ a {
   background-color: transparent;
   outline: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  text-decoration: underline;
 }
 
 .comments-button button:hover {
@@ -340,117 +341,15 @@ a {
 #text {
   text-align: justify;
   margin: 3vh 1vw;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
   line-height: 1.4rem;
+  font-size: 1.3rem;
 }
 
 @media only screen and (min-width: 760px) {
-  a {
-    text-decoration: none;
-  }
-
-  .bold {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  .App {
-    text-align: center;
-  }
-
-  .Header {
-    width: 100%;
-  }
-
-  .Header a {
-    color: red;
-  }
-
-  .Header h1 {
-    font-size: 20px;
-  }
-
   .Header button {
-    position: absolute;
-    top: 1vh;
-    right: 1vw;
+    font-size: 1.3em;
   }
-
-  .Nav {
-    background-color: black;
-    width: 100%;
-    position: sticky;
-    top: 0;
-  }
-
-  .Nav ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .Nav li {
-    display: inline-block;
-    margin: 10px;
-    text-transform: capitalize;
-  }
-
-  .Nav a {
-    color: white;
-  }
-
-  .Nav a:hover {
-    color: cornflowerblue;
-  }
-
-  .Nav a:focus {
-    color: red;
-  }
-
-  .Main {
-    width: auto;
-    background-color: gray;
-    height: 30vh;
-    margin: 0;
-  }
-
-  .Main img {
-    height: 75%;
-    width: 100%;
-  }
-
-  .Main h3 {
-    margin: 0;
-  }
-
-  .sort {
-    background-color: cornflowerblue;
-    position: sticky;
-    top: 4.5vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .sort button {
-    font-size: 1em;
-  }
-
-  .Articles button {
-    background-color: cornflowerblue;
-    border: none;
-    margin: 0;
-    transition-duration: 0.4s;
-  }
-
-  .Articles button:hover {
-    color: white;
-  }
-
-  .Articles button:focus {
-    color: red;
-  }
-
   .Articles ul {
     display: flex;
     flex-direction: row;
@@ -655,12 +554,7 @@ a {
   }
 
   .comments-button button {
-    padding: 0;
-    margin: 0 1vw;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .comments-button button:hover {
@@ -678,6 +572,7 @@ a {
   }
   .submit-comment p {
     margin-top: 0;
+    font-size: 1.5em;
   }
   .submit-comment input {
     width: 90%;

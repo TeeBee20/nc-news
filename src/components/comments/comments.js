@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import { ExpandContext } from "../contexts/Expand";
 import { fetchCommentsByArticleId, formatPostedTimeAgo } from "../utils";
 import { createTimeObj, sortByTime } from "../utils";
-import { DateTime } from "luxon";
 import useLoading from "../../hooks/useLoading";
 import useError from "../../hooks/useError";
 

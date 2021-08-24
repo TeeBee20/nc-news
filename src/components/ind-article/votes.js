@@ -21,6 +21,7 @@ const Votes = () => {
     setVoteMade((currVoteMade) => {
       return !currVoteMade;
     });
+
     const votes = Number(event.target.value);
     patchVotes(article_id, votes)
       .then((article) => {

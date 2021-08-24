@@ -33,13 +33,15 @@ const ArticleBody = () => {
       ) : (
         <div>
           {hasError && <p>Oops! Couldn't load this article.</p>}
-          <h2>{article.title}</h2>
-          <p id="date">{date.toUTCString()}</p>
-          <div className="article-info">
-            <p id="topic">{article.topic}</p>
-            <p id="author">
-              | Posted by: <span className="bold">{article.author}</span>
-            </p>
+          <div className="art-deets">
+            <h2>{article.title}</h2>
+            <p id="date">{date.toUTCString()}</p>
+            <div className="article-info">
+              <p id="topic">{article.topic}</p>
+              <p id="author">
+                | Posted by: <span className="bold">{article.author}</span>
+              </p>
+            </div>
           </div>
           <p id="text">{article.body}</p>
         </div>

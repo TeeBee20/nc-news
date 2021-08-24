@@ -621,7 +621,7 @@ a {
     line-height: 1.4rem;
   }
 }
-/* make text bigger for laptop */
+
 @media only screen and (min-width: 1000px) {
   .Header h1 {
     font-size: 1.5em;
@@ -653,7 +653,7 @@ a {
   }
 
   .Articles ul {
-    margin: 0;
+    margin-left: 0.5vw;
     padding: 0;
     width: 100%;
     flex-direction: column;
@@ -800,5 +800,62 @@ a {
 
   .Comments li {
     font-size: 1.2em;
+    margin: 2vh 0;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .Header button {
+    font-size: 1.2em;
+  }
+
+  #topic {
+    font-size: 1.5em;
+  }
+
+  .main-img {
+    width: 56vw;
+    height: 45vh;
+  }
+
+  .art-deets {
+    margin: 0;
+    padding: 1em;
+    line-height: 2.5em;
+  }
+
+  .art-deets h2 {
+    font-size: 2em;
+  }
+
+  #author,
+  #date {
+    font-size: 1.5em;
+  }
+
+  #text {
+    margin: 0;
+    padding: 0 2em;
+    line-height: 3em;
+    font-size: 1.5rem;
+  }
+
+  .submit-comment input {
+    height: 1.7em;
+  }
+
+  .submit-comment button {
+    font-size: 20px;
+    padding: 0.2em;
+  }
+
+  .Comments li {
+    margin: 2vh 0;
+    padding: 0.5em;
+    font-size: 1.5em;
+  }
+
+  .Comments li p {
+    line-height: 2em;
   }
 }

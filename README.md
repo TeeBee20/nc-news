@@ -17,12 +17,15 @@ Built with React, the app allows users to browse news articles, vote on articles
 1. **Fork** this repo
 
 2. **Clone** repo to machine
+
    `https://github.com/TeeBee20/nc-news.git` and `cd` into repo
 
 3. **Install** dependencies
+
    `npm install`
 
 4. **Run** project to view on `localhost:3000`
+
    `npm start`
 
 ## Requirements

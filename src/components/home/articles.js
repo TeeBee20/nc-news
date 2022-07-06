@@ -79,7 +79,7 @@ const Articles = () => {
                     <div className="art-info">
                       <p id="topic">{article.topic}</p>
                       <h3>{article.title}</h3>
-                      <p id="author">Author: {article.author}</p>
+                      <p id="author">Author Name: {article.author}</p>
                     </div>
                     <div className="art-votes-comm">
                       <p id="votes">⬆︎{article.votes}</p>
